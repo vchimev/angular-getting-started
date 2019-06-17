@@ -7,7 +7,6 @@ import { products } from '../products';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-// #docregion on-notify
 export class ProductListComponent {
   products = products;
 
