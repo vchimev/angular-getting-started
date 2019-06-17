@@ -44,9 +44,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     ProductAlertsComponent,
     ProductDetailsComponent,
     CartComponent,
-// #enddocregion http-client-module
-    ShippingComponent
-// #docregion http-client-module
+    ShippingComponent,
   ],
   bootstrap: [
     AppComponent

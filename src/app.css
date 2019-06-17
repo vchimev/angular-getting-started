@@ -1,0 +1,89 @@
+/*
+In NativeScript, the app.css file is where you place CSS rules that
+you would like to apply to your entire application. Check out
+http://docs.nativescript.org/ui/styling for a full list of the CSS
+selectors and properties you can use to style UI components.
+
+/*
+In many cases you may want to use the NativeScript core theme instead
+of writing your own CSS rules. For a full list of class names in the theme
+refer to http://docs.nativescript.org/ui/theme.
+*/
+@import '~nativescript-theme-core/css/core.light.css';
+
+.fa {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+}
+/* 
+.font {
+  font-family: "Open Sans", "OpenSans-Regular";
+}
+
+.font-bold {
+  font-family: "Open Sans", "OpenSans-Bold";
+  font-weight: bold;
+}
+
+.font-italic {
+  font-family: "Open Sans", "OpenSans-Italic";
+  font-style: italic;
+} */
+
+Label {
+  /* font-family: 'Times New Roman', Times, serif; */
+  /* font-family: "Open Sans", "OpenSans-Regular"; */
+}
+Button {
+  /* font-family: 'Times New Roman', Times, serif; */
+  /* font-family: "Open Sans", "OpenSans-Regular"; */
+}
+
+ActionBar {
+  background-color: #1976d2;
+  color: white;
+}
+
+.action-bar-item {
+  color: white;
+  padding-right: 5;
+}
+
+.big-btn, .btn-red, .btn-green, .btn-blue, .btn-blue-outline {
+  font-weight: bold;
+  font-size: 18;
+  padding: 10 30;
+  border-radius: 25;
+  margin: 20 10 0 10
+}
+.btn-red {
+  color: white;
+  background-color: #ED4472;
+}
+.btn-green {
+  color: white;
+  background-color: #30CE91;
+}
+.btn-blue {
+  color: white;
+  background-color: #1976d2;
+}
+.btn-blue-outline {
+  color: #1976d2;
+  border-color: #1976d2;
+  border-width: 2;
+}
+
+.title {
+  color: #1976d2;
+  font-size: 32;
+  text-align: center;
+  margin-bottom: 8;
+}
+
+.cart-item, .shipping-item {
+  padding: 2 4;
+  margin: 4;
+  border-radius: 16;
+  /* border-width: 2; */
+  background-color: #EEEEEE;
+}

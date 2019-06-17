@@ -1,0 +1,20 @@
+<!-- <app-top-bar title="Shipping Prices"></app-top-bar> -->
+<ActionBar title="Shipping Prices">
+</ActionBar>
+
+<StackLayout class="m-8">
+  <GridLayout *ngFor="let shipping of shippingCosts | async" rows="auto" columns="120 *"
+    class="shipping-item list-group">
+    <Label col="0" [text]="shipping.type" class="list-group-item"></Label>
+    <Label col="1" [text]="shipping.price | currency" class="list-group-item"></Label>
+  </GridLayout>
+
+  <!-- <ListView [items]="shippingCosts | async" class="list-group" height="100%">
+    <ng-template let-shipping="item">
+      <GridLayout rows="auto" columns="120 *" class="shipping-item">
+        <Label col="0" [text]="shipping.type" class="list-group-item"></Label>
+        <Label col="1" [text]="shipping.price | currency" class="list-group-item"></Label>
+      </GridLayout>
+    </ng-template>
+  </ListView> -->
+</StackLayout>

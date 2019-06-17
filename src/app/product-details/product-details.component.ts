@@ -15,32 +15,21 @@ import { CartService } from '../cart.service';
 })
 // #docregion props-methods, get-product, inject-cart-service, add-to-cart
 export class ProductDetailsComponent implements OnInit {
-// #enddocregion add-to-cart, get-product, inject-cart-service
   product;
 
-// #docregion inject-cart-service
   constructor(
     private route: ActivatedRoute,
-// #enddocregion props-methods
     private cartService: CartService
-// #docregion props-methods
   ) { }
-// #enddocregion inject-cart-service
 
-// #docregion get-product
   ngOnInit() {
-// #enddocregion props-methods
     this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')];
     });
-// #docregion props-methods
   }
 
-// #enddocregion props-methods, get-product
-// #docregion add-to-cart
   addToCart(product) {
-    window.alert('Your product has been added to the cart!');
+    alert('Your product has been added to the cart!');
     this.cartService.addToCart(product);
   }
-// #docregion props-methods, get-product, inject-cart-service
 }

@@ -1,40 +1,28 @@
-// #docplaster
-// #docregion imports
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+// import { FormBuilder } from '@angular/forms';
 
 import { CartService } from '../cart.service';
-// #enddocregion imports
+import { CheckoutFormService } from './checkout-form.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [ CheckoutFormService ]
 })
-// #docregion props-services, submit, inject-form-builder, checkout-form, checkout-form-group
 export class CartComponent {
   items;
-// #enddocregion inject-form-builder
   checkoutForm;
-// #enddocregion checkout-form
-// #docregion inject-form-builder
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder,
+    private checkoutFormService: CheckoutFormService
+    // private formBuilder: FormBuilder,
   ) {
-// #enddocregion inject-form-builder
     this.items = this.cartService.getItems();
-
-    this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
-    });
-// #docregion inject-form-builder
+    this.checkoutForm = this.checkoutFormService.prepareCheckoutForm();
   }
-// #enddocregion inject-form-builder, checkout-form-group
 
-  // #enddocregion props-services
   onSubmit(customerData) {
     // Process checkout data here
     console.warn('Your order has been submitted', customerData);
@@ -42,5 +30,4 @@ export class CartComponent {
     this.items = this.cartService.clearCart();
     this.checkoutForm.reset();
   }
-// #docregion props-services, inject-form-builder, checkout-form, checkout-form-group
 }

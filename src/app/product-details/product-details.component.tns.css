@@ -1,0 +1,24 @@
+/*
+Add your NativeScript specific styles here.
+To learn more about styling in NativeScript see:
+https://docs.nativescript.org/angular/ui/styling
+*/
+
+Label {
+  color: #121212;
+  text-align: center;
+}
+
+.name {
+  font-size: 32;
+}
+
+.price {
+  font-size: 24;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 20;
+  font-style: italic;
+}

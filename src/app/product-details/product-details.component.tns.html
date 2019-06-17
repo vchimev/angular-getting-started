@@ -1,0 +1,9 @@
+<ActionBar title="Product Details">
+</ActionBar>
+<StackLayout *ngIf="product" class="m-10">
+  <Label text="{{ product.name }}" class="name"></Label>
+  <Label text="{{ product.price | currency }}" class="price m-8"></Label>
+  <Label text="{{ product.description }}" textWrap="true" class="description"></Label>
+
+  <Button (tap)="addToCart(product)" text="Buy" class="btn-green"></Button>
+</StackLayout>

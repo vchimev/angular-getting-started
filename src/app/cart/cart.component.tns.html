@@ -1,0 +1,44 @@
+<ActionBar title="Cart">
+</ActionBar>
+<ScrollView>
+  <StackLayout>
+
+    <!-- <GridLayout rows="auto auto auto" columns="*"> -->
+    <Button row="0" text="Shipping Prices" nsRouterLink="/shipping" class="btn-blue"></Button>
+
+    <Label row="1" *ngIf="!items.length" text="No Items in the Cart" class="h2 text-center m-10"></Label>
+
+    <!-- <ListView row="1" [items]="items" class="list-group">
+      <ng-template let-item="item">
+        <GridLayout rows="auto" columns="* auto">
+          <Label col="0" [text]="item.name" class="list-group-item"></Label>
+          <Label col="1" [text]="item.price | currency" class="list-group-item"></Label>
+        </GridLayout>
+      </ng-template>
+    </ListView> -->
+
+    <StackLayout row="1" class="m-8">
+      <GridLayout *ngFor="let item of items" rows="auto" columns="* auto" class="list-group cart-item">
+        <Label col="0" [text]="item.name" class="list-group-item"></Label>
+        <Label col="1" [text]="item.price | currency" class="list-group-item"></Label>
+      </GridLayout>
+    </StackLayout>
+
+    <!-- <GridLayout row="2" rows="auto auto auto" columns="auto *">
+      <Label row="0" col="0" text="Name"></Label>
+      <TextField row="0" col="1" [(ngModel)]="checkoutForm.name"></TextField>
+      <Label row="1" col="0" text="Address"></Label>
+      <TextField row="1" col="1" [(ngModel)]="checkoutForm.address"></TextField>
+      <Button row="2" colSpan="2" text="Purchase" (tap)="onSubmit(checkoutForm)" class="btn btn-outline"></Button>
+    </GridLayout> -->
+    <StackLayout row="2">
+      <RadDataForm #rdf tkExampleTitle tkToggleNavButton [source]="checkoutForm">
+      </RadDataForm>
+      <Button text="Purchase" (tap)="onSubmit(checkoutForm);  rdf.dataForm.reload()" class="btn-green"></Button>
+      <!-- <Button text="Purchase" (tap)="onSubmit(checkoutForm); checkoutForm = checkoutFormService.prepareCheckoutForm()"
+        class="btn-green"></Button> -->
+    </StackLayout>
+    <!-- </GridLayout> -->
+
+  </StackLayout>
+</ScrollView>

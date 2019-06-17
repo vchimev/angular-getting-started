@@ -1,0 +1,49 @@
+<app-top-bar title="Products"></app-top-bar>
+<StackLayout>
+  <ListView [items]="products" class="list-group" height="100%">
+    <ng-template let-product="item" let-productId="index">
+      <StackLayout class="list-group-item">
+        <StackLayout [nsRouterLink]="['/products', productId]">
+          <Label [text]="product.name" textWrap="true" class="title"></Label>
+
+          <Label *ngIf="product.description" text="Description: {{ product.description }}" textWrap="true"></Label>
+        </StackLayout>
+        <Button (tap)="share()" text="Share" class="btn-blue"></Button>
+
+        <app-product-alerts [product]="product" (notify)="onNotify()">
+        </app-product-alerts>
+
+      </StackLayout>
+    </ng-template>
+  </ListView>
+</StackLayout>
+
+<!--
+Original Web template:
+
+<!-- #docregion router-link ->
+<div *ngFor="let product of products; index as productId">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3>
+<!-- #enddocregion router-link ->  
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+  
+  <button (click)="share()">
+    Share
+  </button>
+  
+  <app-product-alerts
+    [product]="product"
+    (notify)="onNotify()">
+  </app-product-alerts>
+<!-- #docregion router-link ->
+</div>
+<!-- #enddocregion router-link ->
+
+-->
