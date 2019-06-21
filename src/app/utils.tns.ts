@@ -1,3 +1,4 @@
 // import 'nativescript-localstorage';
 
-export default { alert, localStorage };
+// export default { alert, localStorage };
+export default { alert };
