@@ -1,0 +1,11 @@
+{
+  "xml.fileAssociations": [
+    {
+      "systemId": "/Users/witalec/GitHub/_preview/angular-getting-started/schema/tns.xsd",
+      "pattern": "**/**/*.xml"
+    }
+  ],
+  "files.exclude": {
+    "schema": true
+  }
+}

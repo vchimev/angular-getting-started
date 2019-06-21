@@ -1,0 +1,56 @@
+@import '~nativescript-theme-core/css/core.light.css';
+
+.fa {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+}
+
+ActionBar {
+  background-color: #1976d2;
+  color: white;
+}
+
+.action-bar-item {
+  color: white;
+  padding-right: 5;
+}
+
+.big-btn, .btn-red, .btn-green, .btn-blue, .btn-blue-outline {
+  font-weight: bold;
+  font-size: 18;
+  padding: 10 30;
+  border-radius: 25;
+  margin: 20 10 0 10;
+  width: 90%;
+}
+.btn-red {
+  color: white;
+  background-color: #ED4472;
+}
+.btn-green {
+  color: white;
+  background-color: #30CE91;
+}
+.btn-blue {
+  color: white;
+  background-color: #1976d2;
+}
+.btn-blue-outline {
+  color: #1976d2;
+  border-color: #1976d2;
+  border-width: 2;
+}
+
+.title {
+  color: #1976d2;
+  font-size: 32;
+  text-align: center;
+  margin-bottom: 8;
+}
+
+.cart-item, .shipping-item {
+  padding: 2 4;
+  margin: 4;
+  border-radius: 16;
+  /* border-width: 2; */
+  background-color: #EEEEEE;
+}

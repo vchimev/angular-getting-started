@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
 
+// import window from './utils';
+import { Store } from './store';
+
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items = [];
+  items = Store.load();
 
   constructor(
     private http: HttpClient
-  ) {}
+  ) { }
 
   addToCart(product) {
     this.items.push(product);
+
+    this.updateStore();
   }
 
   getItems() {
@@ -21,7 +26,13 @@ export class CartService {
 
   clearCart() {
     this.items = [];
+    this.updateStore();
+
     return this.items;
+  }
+
+  updateStore() {
+    Store.save(this.items);
   }
 
   getShippingPrices() {
