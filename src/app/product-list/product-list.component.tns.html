@@ -1,0 +1,30 @@
+<StackLayout>
+  <Label text="product-list works" textWrap="true"></Label>
+  <Label text="This is a migrated component" textWrap="true"></Label>
+  <Label text="Update it to provide the UI elements required in your mobile app" textWrap="true"></Label>
+</StackLayout>
+
+<!--
+Original Web template:
+
+<h2>Products</h2>
+
+<div *ngFor="let product of products; index as productId">
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3>
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <button (click)="share()">
+    Share
+  </button>
+
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
+-->
