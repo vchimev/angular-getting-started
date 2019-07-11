@@ -114,6 +114,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-getting-started"
+    }
+  },
+  "defaultProject": "angular-getting-started",
+  "cli": {
+    "defaultCollection": "@nativescript/schematics"
+  }
 }
