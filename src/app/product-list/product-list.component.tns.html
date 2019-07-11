@@ -1,7 +1,23 @@
+<ActionBar title="Products">
+</ActionBar>
 <StackLayout>
-  <Label text="product-list works" textWrap="true"></Label>
-  <Label text="This is a migrated component" textWrap="true"></Label>
-  <Label text="Update it to provide the UI elements required in your mobile app" textWrap="true"></Label>
+  <ListView [items]="products" class="list-group" height="100%">
+    <ng-template let-product="item" let-productId="index">
+      <StackLayout class="list-group-item">
+        <Label [nsRouterLink]="['/products', productId]" [text]="product.name" textWrap="true" class="title">
+        </Label>
+
+        <Label *ngIf="product.description" text="Description: {{ product.description }}" textWrap="true">
+        </Label>
+
+        <Button (tap)="share()" text="Share" class="btn-blue"></Button>
+        <!--
+            <app-product-alerts [product]="product" (notify)="onNotify()">
+            </app-product-alerts>
+          -->
+      </StackLayout>
+    </ng-template>
+  </ListView>
 </StackLayout>
 
 <!--
