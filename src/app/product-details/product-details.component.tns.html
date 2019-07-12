@@ -1,0 +1,23 @@
+<ActionBar title="Product Details">
+</ActionBar>
+<FlexboxLayout flexDirection="column" alignItems="center" class="m-10">
+  <Label text="{{ product.name }}" class="title"></Label>
+  <Label text="{{ product.price | currency }}" class="h2"></Label>
+  <Label text="{{ product.description }}" textWrap="true" class="h3"></Label>
+
+  <Button (tap)="addToCart(product)" text="Buy" class="btn-green"></Button>
+</FlexboxLayout>
+
+<!--
+Original Web template:
+
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+
+  <button (click)="addToCart(product)">Buy</button>
+</div>
+-->
