@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
 
-import { CartService } from '../cart.service';
+import { CartService } from '@src/app/cart.service';
+import { CheckoutFormService } from '@src/app/form/checkout-form.service';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.css']
+  styleUrls: ['./cart.component.css'],
+  providers: [CheckoutFormService]
 })
 export class CartComponent {
   items;
@@ -14,14 +15,10 @@ export class CartComponent {
 
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder,
+    private formService: CheckoutFormService
   ) {
     this.items = this.cartService.getItems();
-
-    this.checkoutForm = this.formBuilder.group({
-      name: '',
-      address: ''
-    });
+    this.checkoutForm = this.formService.prepareCheckoutForm();
   }
 
   onSubmit(customerData) {
