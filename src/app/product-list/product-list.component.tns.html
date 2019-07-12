@@ -11,10 +11,10 @@
         </Label>
 
         <Button (tap)="share()" text="Share" class="btn-blue"></Button>
-        <!--
-            <app-product-alerts [product]="product" (notify)="onNotify()">
-            </app-product-alerts>
-          -->
+
+        <app-product-alerts [product]="product" (notify)="onNotify()">
+        </app-product-alerts>
+
       </StackLayout>
     </ng-template>
   </ListView>

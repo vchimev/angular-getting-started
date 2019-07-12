@@ -1,0 +1,12 @@
+<StackLayout *ngIf="product.price > 700">
+  <Button (tap)="notify.emit()" text="Notify Me" class="btn-green"></Button>
+</StackLayout>
+
+<!--
+Original Web template:
+
+<p *ngIf="product.price > 700">
+  <button (click)="notify.emit()">Notify Me</button>
+</p>
+
+-->
